@@ -4,15 +4,6 @@ const prompt = document.getElementById('prompt');
 let state = 'account'; // Tracks current state: account, password1, password2
 let firstPassword = '';
 
-function updateInputWidth() {
-    const promptWidth = prompt.offsetWidth;
-    terminalInput.style.width = `calc(100% - ${promptWidth + 20}px)`;
-}
-
-// Call this function after setting the prompt text
-prompt.textContent = 'CodeSphere@register/enter your account name:~$ ';
-updateInputWidth();
-
 // Password validation function
 function isValidPassword(password) {
     let errors = [];
@@ -32,6 +23,7 @@ function handleInput(event) {
 }
 
 function processCommand(input) {
+    // Append the prompt and input once
     terminalContent.textContent += '\n' + prompt.textContent + input;
 
     if (state === 'account') {
@@ -57,9 +49,12 @@ function processCommand(input) {
             prompt.textContent = 'CodeSphere@register/enter your password again:~$ ';
         }
     }
+
+    // Append a new prompt at the end
     terminalContent.textContent += '\n' + prompt.textContent;
 }
 
 // Initialize terminal with the first prompt
-terminalContent.textContent = 'Welcome to CodeSphere, feel free to discuss anything here\nenter "new" to create an account\n';
-terminalContent.textContent += prompt.textContent;
+terminalContent.textContent = 'Welcome to CodeSphere, you can create an account here\n';
+prompt.textContent = 'CodeSphere@register/enter account name:~$ '; // Ensure the correct prompt is displayed
+terminalContent.textContent += prompt.textContent; // Display the prompt once
