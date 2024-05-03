@@ -69,7 +69,7 @@ function renderPosts(filteredPosts) {
         postDiv.addEventListener('click', function() {
             // Save selected post to localStorage
             localStorage.setItem('selectedPost', JSON.stringify(post));
-            window.location.href = 'postPage.html'; // Navigate to postPage
+            window.location.href = './../post/postPage.html'; // Navigate to postPage
         });
 
         postsContainer.appendChild(postDiv);
