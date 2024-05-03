@@ -3,6 +3,10 @@ body {
     margin: 0px;
 }
 
+.page-content {
+    margin: 40px;
+}
+
 h1 {
     color: #333;
 }
