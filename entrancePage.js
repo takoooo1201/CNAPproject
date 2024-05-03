@@ -1,0 +1,49 @@
+const terminalContent = document.getElementById('terminal-content');
+const terminalInput = document.getElementById('terminal-input');
+const prompt = document.getElementById('prompt');
+
+const accounts = {
+    'user1': 'password1',
+    'user2': 'password2'
+};
+
+function handleInput(event) {
+    if (event.key === 'Enter') {
+        const command = terminalInput.value.trim();
+        terminalInput.value = '';
+        processCommand(command);
+    }
+}
+
+function processCommand(command) {
+    terminalContent.textContent += '\n' + prompt.textContent + command;
+
+    if (command === 'guest') {
+        window.location.href = '/homePage';
+    } else if (command === 'new') {
+        window.location.href = '/createAccountPage';
+    } else if (accounts[command]) {
+        terminalContent.textContent += '\nEnter password: ';
+        terminalInput.onkeypress = handlePasswordInput.bind(null, command);
+    } else {
+        terminalContent.textContent += '\nInvalid account, please enter again';
+        terminalContent.textContent += '\n' + prompt.textContent;
+        terminalInput.focus();
+    }
+}
+
+function handlePasswordInput(account, event) {
+    if (event.key === 'Enter') {
+        const password = terminalInput.value.trim();
+        if (password === accounts[account]) {
+            window.location.href = '/homePage';
+        } else {
+            terminalContent.textContent += '\nInvalid account, please enter again';
+            terminalContent.textContent += '\n' + prompt.textContent;
+            terminalInput.onkeypress = handleInput;
+        }
+        terminalInput.value = '';
+    }
+}
+
+// Initialize terminal without adding an extra prompt
