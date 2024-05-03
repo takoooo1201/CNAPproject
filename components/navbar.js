@@ -2,14 +2,14 @@ function createNavbar() {
     const navbarHtml = `
         <nav class="navbar">
             <div class="nav-left">
-                <a href="/homepage">CodeSphere</a>
-                <a href="/">Profile</a>
-                <a href="/">Articles</a>
-                <a href="/">Forum</a>
+                <a href="./../home/homePage.html">CodeSphere</a>
+                <a href="./../profile-detailed/profile.html">Profile</a>
+                <a href="./../display-post/displayPage.html">Posts</a>
+                <a href="./../forum/forum.html">Forum</a>
             </div>
             <div class="nav-right">
-                <a href="/">Login</a>
-                <a href="/">Register</a>
+                <a href="./../entrance/entrancePage.html">Login</a>
+                <a href="./../register/registerPage.html">Register</a>
             </div>
         </nav>
     `;

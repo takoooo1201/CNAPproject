@@ -19,9 +19,9 @@ function processCommand(command) {
     terminalContent.textContent += '\n' + prompt.textContent + command;
 
     if (command === 'guest') {
-        window.location.href = '/homePage';
+        window.location.href = './../home/homePage.html';
     } else if (command === 'new') {
-        window.location.href = '/createAccountPage';
+        window.location.href = './../register/registerPage.html';
     } else if (accounts[command]) {
         terminalContent.textContent += '\nEnter password: ';
         terminalInput.onkeypress = handlePasswordInput.bind(null, command);
@@ -36,7 +36,7 @@ function handlePasswordInput(account, event) {
     if (event.key === 'Enter') {
         const password = terminalInput.value.trim();
         if (password === accounts[account]) {
-            window.location.href = '/homePage';
+            window.location.href = './../home/homePage.html';
         } else {
             terminalContent.textContent += '\nInvalid account, please enter again';
             terminalContent.textContent += '\n' + prompt.textContent;
