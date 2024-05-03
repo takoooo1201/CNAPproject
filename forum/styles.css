@@ -8,6 +8,7 @@ body {
 
 .page-container {
     display: flex; /* Enable flexbox */
+    flex-direction: column;
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     min-height: 100vh; /* Full height of the viewport */    
@@ -27,7 +28,7 @@ header {
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-width: 400px;
+    max-width: 600px;
     width: 100%; /* Take full width up to max-width */
 }
 
@@ -71,7 +72,7 @@ header {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%; /* Ensure inputs take full width of the form */
+    width: 95%; /* Ensure inputs take full width of the form */
 }
 
 .new-post button {
