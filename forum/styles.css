@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    min-height: 100vh; /* Full height of the viewport */
+}
+
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eaeef3;
+} */
+
+.page-container {
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2d34;
+    padding: 10px 20px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+}
+
+.nav-right a {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: #d1d1d1;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* 添加 transform 到过渡效果中 */
+}
+
+.navbar a:hover {
+    background-color: #41454d;
+    color: white;
+    transform: scale(1.2);
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    width: 100%; /* Ensure the header extends full width */
+}
+
+.posts, .new-post {
+    margin: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 400px;
+    width: 100%; /* Take full width up to max-width */
+}
+
+.post {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.post h3 {
+    margin: 0 0 10px 0;
+}
+
+.post p {
+    margin: 0;
+    color: #666;
+}
+
+.post span {
+    font-size: 0.9em;
+    color: #333;
+}
+
+.post-author {
+    text-align: right;
+    padding-top: 10px;
+}
+
+.new-post form {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-post label {
+    margin-bottom: 5px;
+}
+
+.new-post input[type="text"],
+.new-post textarea {
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%; /* Ensure inputs take full width of the form */
+}
+
+.new-post button {
+    padding: 10px;
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.new-post button:hover {
+    background-color: #4a54e1;
+}
